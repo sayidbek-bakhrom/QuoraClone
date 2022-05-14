@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if messages %}
+        {% for message in messages %}
+                <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+                    {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+        {% endfor %}
+    {% endif %}
+
+
+    <br><br>
+    {% for question in all_questions %}
+        <div class="card">
+  <h5 class="card-header">{{ question }}</h5>
+  <div class="card-body">
+      {% if question.status == 'n' %}
+            <small class="card-title">{{ question.author.first_name }} asked at {{ question.created_date }}</small>
+      {% else %}
+            <small class="card-title">Anonymous user asked at {{ question.created_date }}</small>
+      {% endif %}
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="{% url 'respond-question' question.pk %}" class="btn btn-primary">Answer</a>
+  </div>
+</div>
+    {% endfor %}
+
+{% endblock %}
