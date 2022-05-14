@@ -1,4 +1,4 @@
-from django.views.generic import ListView, CreateView
+from django.views.generic import ListView, CreateView, TemplateView
 from .models import Question, Response
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
@@ -24,3 +24,7 @@ class RespondQuestionView(SuccessMessageMixin, CreateView):
     template_name = 'main/answer_question.html'
     success_url = reverse_lazy('home')
     success_message = 'You have successfully responded to the question'
+
+
+
+
