@@ -1,5 +1,5 @@
 # QuoraClone
-Quora created with django
+Quora Clone with django.
 Here I am trying to make website like Quora which is enables users with: 
   SignUp Page :
 -- User have to register to ask doubts/questions
