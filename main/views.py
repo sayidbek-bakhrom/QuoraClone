@@ -23,8 +23,11 @@ class RespondQuestionView(SuccessMessageMixin, CreateView):
     fields = '__all__'
     template_name = 'main/answer_question.html'
     success_url = reverse_lazy('home')
-    success_message = 'You have successfully responded to the question'
+    success_message = 'You have successfully responded to the question.'
 
-
+    # def form_valid(self, form, slug):
+    #     form.instance.author = self.request.user
+    #     form.instance.question = self.request.slug
+    #     return super().form_valid(form)
 
 

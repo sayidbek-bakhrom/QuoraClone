@@ -4,7 +4,7 @@
 
     {% if messages %}
         {% for message in messages %}
-                <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
                     {{ message }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
@@ -23,7 +23,7 @@
             <small class="card-title">Anonymous user asked at {{ question.created_date }}</small>
       {% endif %}
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="{% url 'respond-question' question.pk %}" class="btn btn-primary">Answer</a>
+    <a href="{% url 'respond-question' question.slug %}" class="btn btn-primary">Answer</a>
   </div>
 </div>
     {% endfor %}
